@@ -1,0 +1,17 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=Text
+GenericName=Text Editor
+GenericName[de]=Texteditor
+Comment=Edit and Read Text
+Comment[de]=Text lesen und bearbeiten
+
+Icon=accessories-text-editor
+
+Type=Application
+Categories=Qt;Utility;TextEditor;
+
+Exec=/usr/share/Text/Text
+StartupNotify=false
+Terminal=false
+MimeType=text/plain;text/html;text/*;
