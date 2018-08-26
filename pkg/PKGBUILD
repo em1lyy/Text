@@ -1,6 +1,6 @@
 # Maintainer: Jonas Jaguar <jonasjaguar@jagudev.net>
 pkgname=jagudev-text
-pkgver=1.0
+pkgver=1.1
 pkgrel=1
 pkgdesc="A text editor to edit text and create text and delete text and fix text. And to read text. Wow."
 arch=('x86_64')
@@ -10,7 +10,7 @@ depends=(qt5-base)
 makedepends=(gcc make)
 options=()
 source=("https://github.com/jonasjaguar/Text/archive/$pkgver.tar.gz")
-md5sums=('75fdf54747a0c5a80d438f609ee08628')
+md5sums=('3dc39fbbfc6a7eb0792669b526ec87d4')
 validpgpkeys=()
 
 
