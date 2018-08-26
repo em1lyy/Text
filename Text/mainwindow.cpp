@@ -74,12 +74,20 @@ void MainWindow::saveFileAs()
     QFileDialog dialog;
     dialog.setFileMode(QFileDialog::AnyFile);
     QString strFile = dialog.getSaveFileName(NULL, tr("Save as"),"","");
-    QFile *file = new QFile(strFile);
-    file->open(QIODevice::WriteOnly);
-    file->close();
-    this->currentFile = file;
-    this->setWindowTitle(file->fileName().split("/").back() + " - Text");
-    this->saveFile();
+    if (!strFile.isEmpty())
+    {
+        QFile *file = new QFile(strFile);
+        file->open(QIODevice::WriteOnly);
+        file->close();
+        this->currentFile = file;
+        this->setWindowTitle(file->fileName().split("/").back() + " - Text");
+        this->saveFile();
+    }
+    else
+    {
+        qDebug("Operation cancelled.");
+    }
+
 }
 
 void MainWindow::exit()
