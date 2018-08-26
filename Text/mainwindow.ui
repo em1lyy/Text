@@ -14,13 +14,20 @@
    <string>Text</string>
   </property>
   <property name="windowIcon">
-   <iconset theme="accessories-text-editor"/>
+   <iconset theme="accessories-text-editor">
+    <normaloff>.</normaloff>.</iconset>
   </property>
   <property name="locale">
    <locale language="English" country="UnitedKingdom"/>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="verticalSpacing">
+     <number>6</number>
+    </property>
     <item row="0" column="0">
      <widget class="QTextEdit" name="textEdit">
       <property name="font">
@@ -36,10 +43,19 @@
        <bool>true</bool>
       </property>
       <property name="styleSheet">
-       <string notr="true">background:rgb(255, 255, 255);color:rgb(0, 0, 0);font: 12pt &quot;Hack&quot;;</string>
+       <string notr="true"/>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
       </property>
       <property name="documentTitle">
        <string/>
+      </property>
+      <property name="overwriteMode">
+       <bool>false</bool>
+      </property>
+      <property name="acceptRichText">
+       <bool>true</bool>
       </property>
      </widget>
     </item>
@@ -74,11 +90,10 @@
    </widget>
    <widget class="QMenu" name="menuTools">
     <property name="title">
-     <string>Tools</string>
+     <string>Tool&amp;s</string>
     </property>
     <addaction name="actionTO_UPPERCASE"/>
     <addaction name="actionto_lowercase"/>
-    <addaction name="actioniNVERT_cASE"/>
     <addaction name="actionRemove_duplicate_lines"/>
    </widget>
    <widget class="QMenu" name="menuView">
@@ -90,82 +105,111 @@
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
-   <addaction name="menuTools"/>
    <addaction name="menuView"/>
+   <addaction name="menuTools"/>
   </widget>
   <action name="actionOpen">
    <property name="text">
     <string>&amp;Open</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
    </property>
   </action>
   <action name="actionSave">
    <property name="text">
     <string>&amp;Save</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
   </action>
   <action name="actionSave_as">
    <property name="text">
     <string>Save &amp;as</string>
    </property>
-  </action>
-  <action name="actionClose_document">
-   <property name="text">
-    <string>Close document</string>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
    </property>
   </action>
   <action name="actionQuit">
    <property name="text">
     <string>&amp;Quit</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
   </action>
   <action name="actionCopy">
    <property name="text">
     <string>&amp;Copy</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
    </property>
   </action>
   <action name="actionPaste">
    <property name="text">
     <string>&amp;Paste</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
+   </property>
   </action>
   <action name="actionCut">
    <property name="text">
     <string>C&amp;ut</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
    </property>
   </action>
   <action name="actionSelect_all">
    <property name="text">
     <string>&amp;Select all</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
+   </property>
   </action>
   <action name="actionTO_UPPERCASE">
    <property name="text">
     <string>&amp;TO UPPERCASE</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+U</string>
    </property>
   </action>
   <action name="actionto_lowercase">
    <property name="text">
     <string>to &amp;lowercase</string>
    </property>
-  </action>
-  <action name="actioniNVERT_cASE">
-   <property name="text">
-    <string>&amp;iNVERT cASE</string>
+   <property name="shortcut">
+    <string>Ctrl+Shift+L</string>
    </property>
   </action>
   <action name="actionRemove_duplicate_lines">
    <property name="text">
     <string>&amp;Remove duplicate lines</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+D</string>
+   </property>
   </action>
   <action name="actionZoom_in">
    <property name="text">
     <string>&amp;Zoom in</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl++</string>
+   </property>
   </action>
   <action name="actionZoom_out">
    <property name="text">
     <string>Zoom &amp;out</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+-</string>
    </property>
   </action>
  </widget>

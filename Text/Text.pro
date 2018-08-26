@@ -9,6 +9,7 @@ QT       += core gui
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = Text
+TARGET.path = $$PREFIX/
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -32,3 +33,14 @@ HEADERS += \
 
 FORMS += \
         mainwindow.ui
+
+text.path = $$PREFIX/usr/share/Text
+text.files += Text
+text.files += Text.desktop
+
+desktop.path = $$PREFIX/usr/share/applications
+desktop.files += Text.desktop
+
+INSTALLS += \
+    text \
+    desktop

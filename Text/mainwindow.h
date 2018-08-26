@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QFile>
 
 namespace Ui {
 class MainWindow;
@@ -22,7 +23,6 @@ public:
     void selectAll();
     void toUppercase();
     void toLowercase();
-    void invertCase();
     void removeDupeLines(); // This thing has the lowest Priority. Just because I'm lazy. :)
     void zoomIn();
     void zoomOut();
@@ -31,6 +31,7 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    QFile *currentFile = nullptr;
 };
 
 #endif // MAINWINDOW_H
