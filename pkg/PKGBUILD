@@ -1,0 +1,26 @@
+# Maintainer: Jonas Jaguar <jonasjaguar@jagudev.net>
+pkgname=jagudev-text
+pkgver=1.0
+pkgrel=1
+pkgdesc="A text editor to edit text and create text and delete text and fix text. And to read text. Wow."
+arch=('x86_64')
+url="https://jagudev.net"
+license=('GPL3')
+depends=(qt5-base)
+makedepends=(gcc make)
+options=()
+source=("https://github.com/jonasjaguar/Text/archive/$pkgver.tar.gz")
+md5sums=('75fdf54747a0c5a80d438f609ee08628')
+validpgpkeys=()
+
+
+build() {
+	cd "$srcdir/Text-$pkgver/Text"
+	qmake ./Text.pro -spec linux-g++ && /usr/bin/make qmake_all
+	make
+}
+
+package() {
+	cd "$srcdir/Text-$pkgver/Text"
+	make INSTALL_ROOT="$pkgdir" install
+}
