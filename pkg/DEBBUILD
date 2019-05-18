@@ -1,0 +1,40 @@
+maintainer="Jonas Jaguar <jonasjaguar@jagudev.net>"
+pkgname=jagudev-text
+pkgver=1.1
+pkgrel=1
+distribution="unstable"
+urgency="medium"
+pkgdesc="A text editor to edit text and create text and delete text and fix text. And to read text. Wow.\nOriginally intended for JaguOS, now for everyone, on every distro."
+section="misc"
+priority="optional"
+arch=('all')
+url="https://jagudev.net"
+depends=('libqt5multimedia5' 'qt5-default' 'libqt5multimediawidgets5')
+builddepends=('gcc' 'make')
+recommends=()
+suggests=()
+provides=()
+breaks=()
+conflicts=()
+replaces=()
+source=("https://github.com/jonasjaguar/Text/archive/$pkgver.tar.gz")
+
+prepare() {
+	echo "No preparation needed"
+}
+
+check() {
+	echo "Check function, not needed"
+}
+
+build() {
+	cd "$srcdir/Text-$pkgver/Text"
+	/opt/qt512/bin/qmake ./Text.pro -spec linux-g++ && /usr/bin/make qmake_all
+	make
+}
+
+package() {
+	cd "$srcdir/Text-$pkgver/Text"
+	make INSTALL_ROOT="$pkgdir" install
+}
+ 
