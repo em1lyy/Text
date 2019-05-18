@@ -16,6 +16,17 @@ script:
   - cd Text/
   - /opt/qt512/bin/qmake ./Text.pro -spec linux-g++ && /usr/bin/make qmake_all
   - make
+  - cd ../
+  - cd pkg/
+  - wget https://gist.githubusercontent.com/jonasjaguar/3cafb962541cf1064771ba54e4cf0217/raw/e76882caa4968b46715ac06a23174b97e9329a69/makedeb
+  - chmod +x makedeb
+  - sudo ./makedeb --nodeps
+  - DEBNAME=$(find . -name jagudev-text_*)
+  - cp $DEBNAME ../jagudev-text_current.deb
+  - cd ..
+  - cd Text/
+  - tar cfvz ../Text.tar.gz Text Text.desktop
+  - cd ..
 
 after_success:
   - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
@@ -25,6 +36,18 @@ after_failure:
   - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
   - chmod +x send.sh
   - ./send.sh failure $WEBHOOK_URL
+
+deploy:
+  provider: releases
+  api_key:
+    secure: JbAA0EslMoptwkZA2sKhZihEaPUPsCl/pX3b6Dup01rr4YRUgJ0CiwjT4oU9Z1mQBN9mai45QrfqdU14rNkbn9IcxEhMTyYo04hbskQgCdXJC61HQM6JujrcQQDcy8ViXkXHfzG5cj5jP6zOXmHQT3SO5f90f8rY1/9BLC4EY30moUu49DDIRJd8wShpAvTHGpZY4iGKq6MC5kvbRGX/l5YlhmS6qI6F4JfkSOnh3ixLwFYCEh6dTcJHnPHsyBGW08Rn3Mtum9PI/BBdtmPlAHYterdIUzNGhlGqzigwA8Jqz78E8V6VEAoHlqGgTB72sb7nVr74+0GLi22CRfliYl2R0Ckq0he0+JKtJey9IInh0n9vSHB/9OvFGmJEIJsTyGKyckJk3/ZRnlTid0ige6be6V6rcc/6i4KaufvolK+5+i+jBdQ4xkpzMcSA8vHLXR6feOzDn3PIN7g3Id9R4iMoHb0D9DfIQATDaN7sG9tFz7dsGdi8p3iVEJMqWBPtupacCdunsPm6oAwMOlq0/DZ0ywbMxC/kKZPT33DpK/HEDbURG8IqYB0HdE1QottEsa4pUkrx3pSchh+v2FGrHTifhq2h+zcnkcE1EtGeIoij5srwZdpSuqrwpbyJki+yLR+eItt48A/ezFc4YLA4axaeuKYfjBWl+rzU7bIYB8Y=
+  file:
+    - Text.tar.gz
+    - jagudev-text_current.deb
+  skip_cleanup: true
+  on:
+    repo: jonasjaguar/Text
+    tags: true
 
 notifications:
   email:
