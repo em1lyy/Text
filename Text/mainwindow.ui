@@ -33,7 +33,7 @@
       <property name="font">
        <font>
         <family>Hack</family>
-        <pointsize>12</pointsize>
+        <pointsize>14</pointsize>
         <weight>50</weight>
         <italic>false</italic>
         <bold>false</bold>
@@ -67,7 +67,7 @@
      <x>0</x>
      <y>0</y>
      <width>943</width>
-     <height>27</height>
+     <height>28</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -94,6 +94,7 @@
     </property>
     <addaction name="actionTO_UPPERCASE"/>
     <addaction name="actionto_lowercase"/>
+    <addaction name="actiontO_fOLDED_cASE"/>
     <addaction name="actionRemove_duplicate_lines"/>
    </widget>
    <widget class="QMenu" name="menuView">
@@ -103,10 +104,20 @@
     <addaction name="actionZoom_in"/>
     <addaction name="actionZoom_out"/>
    </widget>
+   <widget class="QMenu" name="menuA_bout">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="actionH_elp"/>
+    <addaction name="separator"/>
+    <addaction name="actionAb_out"/>
+    <addaction name="actionAbout_Qt"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
    <addaction name="menuView"/>
    <addaction name="menuTools"/>
+   <addaction name="menuA_bout"/>
   </widget>
   <action name="actionOpen">
    <property name="text">
@@ -210,6 +221,35 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+-</string>
+   </property>
+  </action>
+  <action name="actionAb_out">
+   <property name="text">
+    <string>Ab&amp;out</string>
+   </property>
+  </action>
+  <action name="actionAbout_Qt">
+   <property name="text">
+    <string>About &amp;Qt</string>
+   </property>
+  </action>
+  <action name="actionH_elp">
+   <property name="text">
+    <string>H&amp;elp</string>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
+   </property>
+  </action>
+  <action name="actiontO_fOLDED_cASE">
+   <property name="text">
+    <string>tO fOLDED cASE</string>
+   </property>
+   <property name="toolTip">
+    <string>tO &amp;fOLDED cASE</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+F</string>
    </property>
   </action>
  </widget>

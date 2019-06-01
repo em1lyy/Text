@@ -28,6 +28,10 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp
 
+TRANSLATIONS = \
+         de.ts \
+         fr.ts
+
 HEADERS += \
         mainwindow.h
 
@@ -44,3 +48,6 @@ desktop.files += Text.desktop
 INSTALLS += \
     text \
     desktop
+
+RESOURCES += \
+    text_resources.qrc

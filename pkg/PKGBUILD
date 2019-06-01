@@ -1,6 +1,6 @@
 # Maintainer: Jonas Jaguar <jonasjaguar@jagudev.net>
 pkgname=jagudev-text
-pkgver=1.1
+pkgver=19.06
 pkgrel=1
 pkgdesc="A text editor to edit text and create text and delete text and fix text. And to read text. Wow."
 arch=('x86_64')
