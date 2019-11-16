@@ -3,4 +3,4 @@ A text editor to edit text and create text and delete text and fix text. And to 
 
 # Demo Screenshot
 
-![](https://github.com/crydotsnake/Text/blob/add-screenshot/screenshot.png?raw=true)
+![](https://github.com/jonasjaguar/Text/blob/master/screenshot.png?raw=true)
