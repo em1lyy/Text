@@ -1,10 +1,10 @@
-maintainer="Jonas Jaguar <jonasjaguar@jagudev.net>"
+maintainer="Emily <elishikawa@jagudev.net>"
 pkgname=jagudev-text
 pkgver=19.06
 pkgrel=1
 distribution="unstable"
 urgency="medium"
-pkgdesc="A text editor to edit text and create text and delete text and fix text. And to read text. Wow.\nOriginally intended for JaguOS, now for everyone, on every distro."
+pkgdesc="A text editor to edit text and create text and delete text and fix text. And to read text. Wow."
 section="misc"
 priority="optional"
 arch=('all')
@@ -17,7 +17,7 @@ provides=()
 breaks=()
 conflicts=()
 replaces=()
-source=("https://github.com/jonasjaguar/Text/archive/$pkgver.tar.gz")
+source=("https://github.com/em1lyy/Text/archive/$pkgver.tar.gz")
 
 prepare() {
 	echo "No preparation needed"
