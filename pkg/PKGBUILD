@@ -1,4 +1,4 @@
-# Maintainer: Jonas Jaguar <jonasjaguar@jagudev.net>
+# Maintainer: Emily <elishikawa@jagudev.net>
 pkgname=jagudev-text
 pkgver=19.06
 pkgrel=1
@@ -9,7 +9,7 @@ license=('GPL3')
 depends=(qt5-base)
 makedepends=(gcc make)
 options=()
-source=("https://github.com/jonasjaguar/Text/archive/$pkgver.tar.gz")
+source=("https://github.com/em1lyy/Text/archive/$pkgver.tar.gz")
 md5sums=('SKIP')
 validpgpkeys=()
 
